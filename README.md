@@ -3,3 +3,14 @@ This assignment is a Car Rental System coded in C++ using Object Oriented Progra
 <br>The system allows three types of users- Customers, Employees and a Manager.<br>
 [`customers.csv`](/customers.csv) and [`employees.csv`](/employees.csv) stores [name,id,user record,no. of cars,pending due,password]<br>
 [`cars.csv`](/cars.csv) stores [model,id,status,renter,day rented]<br>
+To run the program, type the following commands:
+```
+g++ main.cpp -o main.exe
+.\main.exe
+```
+<br>
+NOTE: There is a system Manager with login credentials id: CarSysMan , password: MngPass<br>
+The manager has special privileges, such as:<br>
+1) Changing system parameters(by pressing 1)<br>
+2) Modifying databases to add/remove customers, employees, and cars<br>
+3) Change passwords and names of customers and employees.<br>
