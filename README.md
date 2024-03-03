@@ -10,6 +10,7 @@ g++ main.cpp -o main.exe
 ```
 <br>
 NOTE: There is a system Manager with login credentials id: CarSysMan , password: MngPass<br>
+Only the manager can add or delete customers,employees and cars. When a customer/employee is added the default password is (name)@(id). This can be changed by update method.<br>
 The manager has special privileges, such as:<br>
 1) Changing system parameters(by pressing 1)<br>
 2) Modifying databases to add/remove customers, employees, and cars<br>
