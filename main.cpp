@@ -278,10 +278,10 @@ public:
 
 void Customer::display()
 {
-    int a;
+    string a;
 
 
-    cout << "-------------------------------------------------------\n";
+W:    cout << "-------------------------------------------------------\n";
     cout << "1. Press 1 to display Profile\n";
     cout << "2. Press 2 to see available cars\n";
     cout << "3. Press 3 to see rented cars\n";
@@ -292,9 +292,8 @@ void Customer::display()
     cout << "8. Press 8 to exit\n";
     cout << "-------------------------------------------------------\n";
     cin >> a;
-    switch (a)
-    {
-    case 1:
+    
+    if(a=="1"){
         cout << "Customer Profile : \n";
         cout << "Name:" << this->name << "  "
              << "ID:" << this->id << "  "
@@ -302,37 +301,39 @@ void Customer::display()
              << "No. of cars rented:" << this->cars << "  "
              << "Due:" << this->due << "\n";
         this->display();
-        break;
-    case 2:
+    }
+    else if(a=="2"){
         this->see_available_cars();
         this->display();
-        break;
-    case 3:
+    }
+    else if(a=="3"){
         this->see_my_cars();
         this->display();
-        break;
-    case 4:
+    }
+    else if(a=="4"){
         this->check_available();
         this->display();
-        break;
-    case 5:
+    }
+    else if(a=="5"){
         this->rent_car();
         this->display();
-        break;
-    case 6:
+    }
+    else if(a=="6"){
         this->return_car();
         this->display();
-        break;
-    case 7:
+    }
+    else if(a=="7"){
         this->clear_due();
         this->display();
-        break;
-    case 8:
-        cout << "Thank You\n";
-        break;
-    default:
-        cout<<"Invalid Input\n";
     }
+    else if(a=="8"){
+        cout << "Thank You\n";
+    }
+    else {
+        cout<<"Invalid Input\n";
+        goto W;
+    }
+    
 }
 
 void Customer::return_car()
@@ -422,10 +423,10 @@ public:
 
 void Employee::display()
 {
-    int a;
+    string a;
 
 
-    cout << "-------------------------------------------------------\n";
+X:    cout << "-------------------------------------------------------\n";
     cout << "1. Press 1 to display Profile\n";
     cout << "2. Press 2 to see available cars\n";
     cout << "3. Press 3 to see rented cars\n";
@@ -436,9 +437,8 @@ void Employee::display()
     cout << "8. Press 8 to exit\n";
     cout << "-------------------------------------------------------\n";
     cin >> a;
-    switch (a)
-    {
-    case 1:
+    
+    if(a=="1"){
         cout << "Employee Profile : \n";
         cout << "Name:" << this->name << "  "
              << "ID:" << this->id << "  "
@@ -446,37 +446,39 @@ void Employee::display()
              << "No. of cars rented:" << this->cars << "  "
              << "Due:" << this->due << "\n";
         this->display();
-        break;
-    case 2:
+    }
+    else if(a=="2"){
         this->see_available_cars();
         this->display();
-        break;
-    case 3:
+    }
+    else if(a=="3"){
         this->see_my_cars();
         this->display();
-        break;
-    case 4:
+    }
+    else if(a=="4"){
         this->check_available();
         this->display();
-        break;
-    case 5:
+    }
+    else if(a=="5"){
         this->rent_car();
         this->display();
-        break;
-    case 6:
+    }
+    else if(a=="6"){
         this->return_car();
         this->display();
-        break;
-    case 7:
+    }
+    else if(a=="7"){
         this->clear_due();
         this->display();
-        break;
-    case 8:
-        cout << "Thank You\n";
-        break;
-    default:
-        cout<<"Invalid Input\n";
     }
+    else if(a=="8"){
+        cout << "Thank You\n";
+    }
+    else {
+        cout<<"Invalid Input\n";
+        goto X;
+    }
+    
 }
 
 void Employee::return_car()
@@ -563,10 +565,10 @@ public:
 
 void Manager::display()
 {
-    int a;
+    string a;
 
 
-    cout << "-------------------------------------------------------\n";
+  Y:  cout << "-------------------------------------------------------\n";
     cout << "                    Manager's Menu                     \n";
     cout << "1. Press 1 to change System settings(rent,fine..etc)\n";
     cout << "2. Press 2 to see data of all cars\n";
@@ -579,91 +581,90 @@ void Manager::display()
     cout << "9. Press 9 to reset system settings\n";
     cout << "-------------------------------------------------------\n";
     cin >> a;
-    int b;
-    switch (a)
-    {
-    case 1:
+    string b;
+    
+    
+    if(a=="1"){
         this->change_settings();
         this->display();
-        break;
-    case 2:
+        }
+    else if(a=="2"){
         this->see_all_cars();
         this->display();
-        break;
-    case 3:
+        }
+    else if(a=="3"){
         this->see_all_customers();
         this->display();
-        break;
-    case 4:
+        }
+    else if(a=="4"){
         this->see_all_employees();
         this->display();
-        break;
-    case 5:
+        }
+    else if(a=="5"){
         cout << "1. Press 1 to add Car\n";
         cout << "2. Press 2 to update Car\n";
         cout << "3. Press 3 to remove Car\n";
         cin >> b;
-        switch (b)
-        {
-        case 1:
+        if(b=="1"){
             this->add_car();
-            break;
-        case 2:
+            }
+        else if(b=="2"){
             this->upd_car();
-            break;
-        case 3:
+            }
+        else if(b=="3"){
             this->rm_car();
-            break;
-        }
+            }
+        
         this->display();
-        break;
-    case 6:
+        }
+    else if(a=="6"){
         cout << "1. Press 1 to add Customer\n";
         cout << "2. Press 2 to update Customer\n";
         cout << "3. Press 3 to remove Customer\n";
         cin >> b;
-        switch (b)
-        {
-        case 1:
+        if(b=="1"){
             this->add_customer();
-            break;
-        case 2:
+            }
+        else if(b=="2"){
             this->upd_customer();
-            break;
-        case 3:
+            }
+        else if(a=="3"){
             this->rm_customer();
-            break;
+            }
+        else {
+            cout<<"Invalid input\n";
         }
+        
         this->display();
-        break;
-    case 7:
+        }
+    else if(a=="7"){
         cout << "1. Press 1 to add Employee\n";
         cout << "2. Press 2 to update Employee\n";
         cout << "3. Press 3 to remove Employee\n";
         cin >> b;
-        switch (b)
-        {
-        case 1:
+        
+        if(b=="1"){
             this->add_employee();
-            break;
-        case 2:
+        }
+        else if(b=="2"){
             this->upd_employee();
-            break;
-        case 3:
+        }
+        else if(b=="3"){
             this->rm_employee();
-            break;
+            
         }
         this->display();
-        break;
-    case 8:
+        }
+    else if(a=="8"){
         cout << "Thank You\n";
-        break;
-    case 9:
+        }
+    else if(a=="9"){
         this->default_set();
         this->display();
-        break;
-    default:
-        cout<<"Invalid Input\n";break;
+        }
+    else{
+        cout<<"Invalid Input\n";
+        goto Y;
     }
 }
 
@@ -949,10 +950,10 @@ void Manager::default_set()
 
 void display_menu()
 {
-    int a;
+    string a;
 
 
-    cout << "---------------------------------------\n";
+Z:    cout << "---------------------------------------\n";
     cout << "\nWelcome to the Car Rental System!\n";
     cout << "1. Press 1 to log in as a Customer\n";
     cout << "2. Press 2 to log in as an Employee\n";
@@ -960,7 +961,8 @@ void display_menu()
     cout << "4. Press 4 to exit\n";
     cout << "---------------------------------------\n";
     cin >> a;
-    if (a == 1)
+    
+    if (a == "1")
     {
         string id, pass;
         int f = 0;
@@ -992,7 +994,7 @@ void display_menu()
             display_menu();
         }
     }
-    else if (a == 2)
+    else if (a == "2")
     {
         string id, pass;
         int f = 0;
@@ -1024,7 +1026,7 @@ void display_menu()
             display_menu();
         }
     }
-    else if (a == 3)
+    else if (a == "3")
     {
         string id, pass;
         int f = 0;
@@ -1052,13 +1054,14 @@ void display_menu()
             display_menu();
         }
     }
-    else if (a == 4)
+    else if (a == "4")
     {
         cout << "Thank You\n";
     }
     else
     {
         cout<<"Invalid input\n";
+        goto Z;
     }
 }
 
